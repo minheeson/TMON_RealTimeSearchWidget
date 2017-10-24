@@ -29,11 +29,9 @@
 
 ## 개발 내용
 
-Configure | Detail
-
----|---
-
-<img src = "https://github.com/minheeson/TMON_RealTimeSearchWidget/blob/master/screenshot_1.png" width="70%"> | <img src="https://github.com/minheeson/TMON_RealTimeSearchWidget/blob/master/screenshot_2.png" width="70%">
+|                Configure                 |                  Detail                  |
+| :--------------------------------------: | :--------------------------------------: |
+| <img src="https://github.com/minheeson/TMON_RealTimeSearchWidget/blob/master/screenshot_1.png" width="200"> | <img src="https://github.com/minheeson/TMON_RealTimeSearchWidget/blob/master/screenshot_2.png" width="200"> |
 
 #### 1. 배경은 폰에 설정된 배경화면 사용
 
