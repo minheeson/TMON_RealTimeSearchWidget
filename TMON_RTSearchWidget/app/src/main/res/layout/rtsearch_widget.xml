@@ -1,0 +1,356 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="330dp"
+    android:layout_height="222dp"
+    android:background="#00FFFFFF"
+    android:id="@+id/change_bg"
+    android:orientation="vertical">
+
+    <!--실시간 검색어 및 설정 버튼-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.5dp"
+            android:layout_marginTop="17dp"
+            android:letterSpacing="-0.07"
+            android:text="실시간 검색어"
+            android:textColor="#2b2f33"
+            android:textSize="14.2sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btn_to_conf"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/setting" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/refresh_icon" />
+
+    </LinearLayout>
+
+    <!--구분선-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#000000">
+
+    </LinearLayout>
+
+    <!--순위테이블:1~5위-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="1"
+                    android:textColor="#fa5a44"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="샤오미 공기청정기"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="2"
+                    android:textColor="#fa5a44"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="린넨셔츠"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="3"
+                    android:textColor="#fa5a44"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="꿀딜"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="4"
+                    android:textColor="#959da6"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="맥북프로"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="5"
+                    android:textColor="#959da6"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="휴대용선풍기"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--순위테이블:6~10위-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="6"
+                    android:textColor="#959da6"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="방수팩"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="7"
+                    android:textColor="#959da6"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="항공권"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="8"
+                    android:textColor="#959da6"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="주유패스"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="9"
+                    android:textColor="#959da6"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="생수"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="-5.7sp"
+                    android:paddingLeft="17.5dp"
+                    android:text="10"
+                    android:textColor="#959da6"
+                    android:textSize="18.2sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.5dp"
+                    android:letterSpacing="-0.07"
+                    android:text="슈퍼마트"
+                    android:textColor="#5a5f68"
+                    android:textSize="14.1sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
