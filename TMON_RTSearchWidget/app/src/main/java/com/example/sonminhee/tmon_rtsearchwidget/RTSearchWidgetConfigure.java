@@ -25,11 +25,12 @@ import android.widget.TextView;
 public class RTSearchWidgetConfigure extends AppCompatActivity implements View.OnClickListener {
     private int mAppWidgetId;
     private SeekBar SeekTransparent;
-    private int transparent = 50; //default
+    private int transparent = 50;
     private LinearLayout bg_widget;
     private String bg_value;
 
     private static final String ACTION_WIDGET_CONFIGURE = "CONFIGURE_CLICK";
+    private static final String TAG = "RTSearchWidgetConfigure";
 
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -59,7 +60,7 @@ public class RTSearchWidgetConfigure extends AppCompatActivity implements View.O
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                Log.i("","TEST TEST TOUCH");
+                Log.i(TAG, "TEST TEST TOUCH");
                 //선택막대를 터치하고 드래그를 시작할 때 실행되는 메소드
             }
 
@@ -68,7 +69,7 @@ public class RTSearchWidgetConfigure extends AppCompatActivity implements View.O
                 //seekbar 움직이다가 멈췄을 때
                 TextView tv = (TextView) findViewById(R.id.transparentResult);
                 tv.setText(tv.getText());
-                Log.i("","TEST TEST STOP TOUCH");
+                Log.i(TAG, "TEST TEST STOP TOUCH");
 
             }
         });
@@ -101,16 +102,15 @@ public class RTSearchWidgetConfigure extends AppCompatActivity implements View.O
         SharedPreferences sharedPreferences = getSharedPreferences("VALUE", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         if (v.getId() == R.id.btn_confirm) {
-            Log.i("","TEST TEST CONFIRM");
+            Log.i("", "TEST TEST CONFIRM");
 
             //sharedPreferences에 저장
             editor.putString("selectedValue", bg_value);
             editor.commit();
 
-
             setIntent();
-            Log.i("","TEST TEST setINTENT");
-        }else {
+            Log.i("", "TEST TEST setINTENT");
+        } else {
             editor.putString("selectedValue", "#80ffffff");
             editor.commit();
 
@@ -131,7 +131,7 @@ public class RTSearchWidgetConfigure extends AppCompatActivity implements View.O
 
     }
 
-    private void setIntent(){
+    private void setIntent() {
         Intent intent = new Intent(RTSearchWidgetConfigure.this, RTSearchWidget.class);
         intent.setAction(ACTION_WIDGET_CONFIGURE);
         RTSearchWidgetConfigure.this.sendBroadcast(intent);

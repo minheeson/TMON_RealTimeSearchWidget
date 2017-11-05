@@ -20,6 +20,7 @@ public class RTSearchWidget extends AppWidgetProvider {
     private static final String ACTION_WIDGET_CONFIGURE = "CONFIGURE_CLICK";
     private static final String ACTION_WIDGET_DETAIL = "DETAIL_CLICK";
     private static final String ACTION_WIDGET_REFRESH = "REFRESH_CLICK";
+    private static final String TAG = "RTSearchWidget";
 
     String str_value;
     String data[];
@@ -29,38 +30,29 @@ public class RTSearchWidget extends AppWidgetProvider {
         super.onReceive(context, intent);
 
         String action = intent.getAction();
-        Log.i("", "MMMMM : " + action);
 
-        if(action.equals(ACTION_WIDGET_CONFIGURE)){
-            Log.i("","TEST TEST CONFIGURE");
+        if (action.equals(ACTION_WIDGET_CONFIGURE)) {
+            Log.i(TAG, "TEST TEST CONFIGURE");
             SharedPreferences sharedPreferences = context.getSharedPreferences("VALUE", MODE_PRIVATE);
             str_value = sharedPreferences.getString("selectedValue", "fail");
 
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
             this.onUpdate(context, appWidgetManager, appWidgetManager.getAppWidgetIds(new ComponentName(context, RTSearchWidget.class)));
             return;
-        }else if (action.startsWith(ACTION_WIDGET_DETAIL)){
-            Log.i("","TEST TEST DETAIL  -- " + action);
+        } else if (action.startsWith(ACTION_WIDGET_DETAIL)) {
             String title = action.substring(action.indexOf("s"));
-            Log.i("", "title index : " + title);
             Intent detailIntent = new Intent(context, RTSearchWidgetDetail.class);
-            Log.i("","TEST CONTEXT : "+ context);
-            detailIntent.putExtra("title", "샤오미" );
+            detailIntent.putExtra("title", "샤오미");
             context.startActivity(detailIntent);
 
 
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
             this.onUpdate(context, appWidgetManager, appWidgetManager.getAppWidgetIds(new ComponentName(context, RTSearchWidget.class)));
             return;
-            //Intent tmp = getIntent();
-            /*Intent webIntent = new Intent(context, RTSearchWidgetDetail.class);
-            String name = webIntent.getExtras().getString("title");
 
-            //intent.
-            Log.i("","받아온거 : " + name);*/
 
-        }else if(action.equals(ACTION_WIDGET_REFRESH)){
-            Log.i("","TEST TEST REFRESH");
+        } else if (action.equals(ACTION_WIDGET_REFRESH)) {
+            Log.i(TAG, "TEST TEST REFRESH");
         }
     }
 
@@ -74,7 +66,7 @@ public class RTSearchWidget extends AppWidgetProvider {
 
     void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                          int appWidgetId) {
-        Log.i("","TEST TEST WIDGET START");
+        Log.i(TAG, "TEST TEST WIDGET START");
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.rtsearch_widget);
 
         remoteViews.setInt(R.id.change_bg, "setBackgroundColor", Color.parseColor(str_value));
@@ -83,20 +75,14 @@ public class RTSearchWidget extends AppWidgetProvider {
         PendingIntent confPendingIntent = PendingIntent.getActivity(context, 0, confIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.btn_to_conf, confPendingIntent);
 
-        /*
-        Intent refreshIntent = new Intent(context, RTSearchWidgetProgress.class);
-        PendingIntent refreshPendingIntent = PendingIntent.getActivity(context, 0, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        remoteViews.setOnClickPendingIntent(R.id.btnRefresh, refreshPendingIntent);
-        */
-
         Intent webIntent = new Intent();
-        webIntent.setAction(ACTION_WIDGET_DETAIL +"_" + 3);
-        Log.i("","GETACTION : " +webIntent.getAction());
+        webIntent.setAction(ACTION_WIDGET_DETAIL + "_" + 3);
+        Log.i("", "GETACTION : " + webIntent.getAction());
         PendingIntent webPendingIntent = PendingIntent.getBroadcast(context, 0, webIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        for(int i=0; i<10; i++){ //OnClick이 가능하게 해줘
-            int resId = context.getResources().getIdentifier("s"+i, "id", context.getPackageName());
-            Log.i("", "INDEX : "+ i);
+        for (int i = 0; i < 10; i++) {
+            int resId = context.getResources().getIdentifier("s" + i, "id", context.getPackageName());
+            Log.i("", "INDEX : " + i);
             remoteViews.setOnClickPendingIntent(resId, webPendingIntent);
         }
 
@@ -106,7 +92,7 @@ public class RTSearchWidget extends AppWidgetProvider {
 
     }
 
-    private void jsonLoading(Context context, RemoteViews remoteViews){
+    private void jsonLoading(Context context, RemoteViews remoteViews) {
         JSONLoadingTask jsonLoadingTask = new JSONLoadingTask();
 
         try {
@@ -127,21 +113,12 @@ public class RTSearchWidget extends AppWidgetProvider {
         }
     }
 
-    private void updateList(Context context, RemoteViews remoteViews, String[] arr){
+    private void updateList(Context context, RemoteViews remoteViews, String[] arr) {
         String pkg = context.getPackageName();
 
-        for(int i=0; i<arr.length; i++){
-            int resId = context.getResources().getIdentifier("s"+i, "id", pkg);
+        for (int i = 0; i < arr.length; i++) {
+            int resId = context.getResources().getIdentifier("s" + i, "id", pkg);
             remoteViews.setTextViewText(resId, data[i]);
-
-            /*
-            Intent fillInIntent = new Intent();
-            fillInIntent.setAction(ACTION_WIDGET_DETAIL);
-            Bundle bundle = new Bundle();
-            bundle.putString(EXTRA_STRING, data[i]);
-            fillInIntent.putExtras(bundle);
-            remoteViews.setOnClickFillInIntent(resId, fillInIntent);
-            */
         }
     }
 

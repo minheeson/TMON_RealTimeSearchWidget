@@ -10,18 +10,19 @@ import android.util.Log;
  * Created by sonminhee on 2017. 7. 12..
  */
 
-public class RTSearchWidgetDetail extends Activity{
+public class RTSearchWidgetDetail extends Activity {
+
+    private static final String TAG = "RTSearchWidgetDetail";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rtsearch_detail);
 
 
         Intent intent = getIntent();
         String title = intent.getExtras().getString("title");
-        Log.i("","TEST TEST RTSEARCH_DETAIL");
-        Log.i("","받아온것 : " + title);
+        Log.i(TAG, "TEST TEST RTSEARCH_DETAIL");
 
     }
 }

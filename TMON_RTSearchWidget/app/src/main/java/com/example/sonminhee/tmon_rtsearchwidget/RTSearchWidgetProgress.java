@@ -8,13 +8,12 @@ import android.util.Log;
  * Created by sonminhee on 2017. 7. 12..
  */
 
-public class RTSearchWidgetProgress extends Activity{
+public class RTSearchWidgetProgress extends Activity {
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rtsearch_widget_progress);
 
-        Log.i("","TEST TEST REFRESH_ACTIVITY");
 
     }
 
